@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BranchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::resource('products',ProductController::class);
-Route::resource('categories',CategoryController::class);
+Route::get('/', [BranchController::class,'all']);
+Route::get('branches/addBranch',[BranchController::class,'addBranch']);
+Route::put('branches/updateBranch',[BranchController::class,'updateBranch'])->name('branches.updateBranch');
 
