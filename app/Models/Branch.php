@@ -10,5 +10,6 @@ class Branch extends Model
 {
     use HasFactory,SoftDeletes;
 
+    protected $primaryKey = 'branch_no';
     protected $fillable = ['custom_no','name_ar','name_en','desc_ar','desc_en','notes','address'];
 }
